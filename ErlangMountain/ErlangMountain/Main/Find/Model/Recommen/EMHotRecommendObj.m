@@ -1,0 +1,38 @@
+//
+//  EMHotRecommendObj.m
+//  ErlangMountain
+//
+//  Created by lequwuxian1 on 2018/4/23.
+//  Copyright © 2018年 luowenx. All rights reserved.
+//
+
+#import "EMHotRecommendObj.h"
+#import "EMRecommendItem.h"
+
+@implementation EMHotRecommendObj
+
+LQDataTransformationImplementation
+
+-(id)initWith:(NSDictionary *)dic
+{
+    if (!dic || ![dic isKindOfClass:[NSDictionary class]]) { return nil; }
+    self = [super init];
+    if (!self) { return nil;}
+    startParser(dic, self, EMHotRecommendObj)
+    parserBaseAttr(hasMore, boolValue)
+    parserDiffBaseAttr(isFinished_, @"isFinished", boolValue)
+    parserBaseAttr(categoryId, integerValue)
+    parserBaseAttr(count, integerValue)
+    parserBaseAttr(categoryType, integerValue)
+    
+    parserObjAttr(contentType)
+    parserObjAttr(title)
+    
+    if (lqpIsJsonElementValid(intdic, @"list", NULL)) {
+        inobj.list = [EMRecommendItem objArrayWithDics:intdic[@"list"]];
+    }
+    
+    return self;
+}
+
+@end

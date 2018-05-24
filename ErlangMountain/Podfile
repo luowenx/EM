@@ -1,0 +1,15 @@
+platform:ios,'8.0'
+
+target "ErlangMountain" do
+
+pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2'
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'MBProgressHUD'
+pod 'PureLayout'
+pod 'MJRefresh'
+pod 'FMDB'
+pod 'YYCache'
+
+end
+

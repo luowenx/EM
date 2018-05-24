@@ -1,0 +1,33 @@
+//
+//  EMViewModel.m
+//  ErlangMountain
+//
+//  Created by lequwuxian1 on 2018/4/13.
+//  Copyright © 2018年 luowenx. All rights reserved.
+//
+
+#import "EMViewModel.h"
+
+@implementation EMViewModel
+@synthesize page = page_;
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        page_ = 0;
+    }
+    return self;
+}
+
+-(void)fetchData
+{
+    
+}
+
+-(void)loadMoreData
+{
+    
+}
+
+@end
